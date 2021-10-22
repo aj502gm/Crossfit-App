@@ -53,7 +53,7 @@ CREATE TABLE horarios_clase( /*XXXX*/
     CONSTRAINT fk_CLASE FOREIGN KEY (id_clase) REFERENCES clases(id_clase)
 
 );
-CREATE TABLE asistencia_clases( /*XXXXX/*/
+CREATE TABLE asistencia_clases( /*XXXXX*/
     id_clase INT,
     id_atleta INT,
     comentario TEXT,
@@ -111,7 +111,7 @@ CREATE TABLE detalles_Top_Hombres( /*XXXX*/
     mes ENUM ('ENERO', 'FEBRERO' ,'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'), /*CONSTRAINT*/
     puesto_top INT,
 
-    CONSTRAINT  fk_id_leader_detalles_hombres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_especialidad),
+    CONSTRAINT  fk_id_leader_detalles_hombres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard),
     CONSTRAINT fk_id_atleta_detalles_hombres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
     CONSTRAINT check_dia CHECK (dia >= 1 AND dia <= 31)
 );
@@ -123,7 +123,7 @@ CREATE TABLE detalles_Top_Mujeres( /*XXXX*/
     mes ENUM ('ENERO', 'FEBRERO' ,'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'), /*CONSTRAINT*/
     puesto_top INT,
 
-    CONSTRAINT  fk_id_leader_detalles_mujeres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_especialidad),
+    CONSTRAINT  fk_id_leader_detalles_mujeres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard),
     CONSTRAINT fk_id_atleta_detalles_mujeres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
     CONSTRAINT check_dia_mujeres CHECK (dia >= 1 AND dia <= 31)
 );
