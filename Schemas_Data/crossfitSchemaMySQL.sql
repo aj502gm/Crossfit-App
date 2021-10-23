@@ -88,10 +88,11 @@ CREATE TABLE especialidad_atletas( /*XXXX*/
     pr FLOAT,
     progreso FLOAT,
     clase_logro INT,
-
+    fecha_logro DATE,
     PRIMARY KEY (id_atleta, id_especialidad),
     CONSTRAINT fk_id_atleta_especialidad FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
-    CONSTRAINT fk_id_especialidad_especialidad FOREIGN KEY  (id_especialidad) REFERENCES  especialidad(id_especialidad)
+    CONSTRAINT fk_id_especialidad_especialidad FOREIGN KEY  (id_especialidad) REFERENCES  especialidad(id_especialidad),
+    CONSTRAINT fk_id_claseLogro_idclase FOREIGN KEY (clase_logro) REFERENCES clases(id_clase)
 );
 
 CREATE TABLE leaderboard( /*XXXX*/
