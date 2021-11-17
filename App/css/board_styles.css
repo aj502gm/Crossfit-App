@@ -3,7 +3,7 @@ body
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url(pesas.jpg);
+    background: url(../media/pesas.jpg);
     background-size: cover;
     background-position: center center;
     display: flex;
