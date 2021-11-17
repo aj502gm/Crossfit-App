@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); 
+
+
+
+body
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(cross.jpg);
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins';
+    padding: 100px;
+}
+
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+}
+
+header .logo
+{
+    position: relative;
+    font-size: 2em;
+    color: #c9e300;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Poppins';
+}
+
+header .navigation
+{
+    position: 100px;
+    display: flex;
+}
+header .navigation
+{
+    list-style: none;
+}
+
+header .navigation li
+{
+    list-style: none;
+}
+header .navigation li a
+{
+    display: inline-block;
+    color: #fff;
+    margin-right: 150px;
+    text-decoration: none;
+    font-family: 'Poppins';
+}
+
+header .navigation li a:hover
+{
+    color:#c9e300;
+}
+
+.info
+{
+    max-width: 600px;
+}
+
+.info .infoBX h2
+{
+    font-size: 4em;
+    color: #fff;
+    line-height: 1em;
+}
+
+.info .infoBX p
+{
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 300;
+    margin: 20px 0;
+}
+
+.info .infoBX a
+{
+    display: inline-block;
+    padding: 10px 30px;
+    background: #626466;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 10px;
+}
+
+.info .infoBX a:hover
+{
+    background: black;
+    color: #fff;
+    padding: 15px 35px;
+}
