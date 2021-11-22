@@ -6,11 +6,9 @@ body
     background: url(../media/gym.jpg);
     background-size: cover;
     background-position: center center;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Poppins';
-    padding: 100px;
+    padding: 50px;
 }

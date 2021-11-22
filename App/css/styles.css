@@ -41,7 +41,16 @@ header .logo
     letter-spacing: 1px;
     font-family: 'Poppins';
 }
-
+.logo{
+    position: relative;
+    font-size: 2em;
+    color: #c9e300;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Poppins';
+}
 header .navigation
 {
     position: 100px;
