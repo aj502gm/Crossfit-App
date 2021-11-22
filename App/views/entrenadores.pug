@@ -1,0 +1,23 @@
+extends ./layout/index
+
+block contenido
+    .container
+        nav.navbar.navbar-light.bg-dark
+            .container-fluid
+            a.logo(href='#') Entrenadores
+        table#tabla-entrenadores.table.table-dark.table-hover(class='bg-dark.bg-gradient')
+            thead
+            tr
+                th(scope='col') #
+                th(scope='col') ID
+                th(scope='col') Nombre
+                th(scope='col') Apellido
+                th(scope='col')
+            tr
+                td 1
+                td 1
+                td Andres
+                td Gonzalez
+                td
+                    input#1.btn.btn-danger(type='button' value='Eliminar')
+            tbody

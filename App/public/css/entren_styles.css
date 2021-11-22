@@ -1,0 +1,14 @@
+body
+{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    /*background: url(../media/gym.jpg);*/
+    background-size: cover;
+    background-position: center center;
+    
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Poppins';
+    padding: 50px;
+}
