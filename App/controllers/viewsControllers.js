@@ -1,11 +1,21 @@
+
+
+
+
+
+import Atleta from "../models/Atleta.js";
+
 const mainMenu = (req, res) => {
     res.render("inicio", {
         pagina: 'Inicio'
     });
 }
-const entrenadoresMenu = (req, res) => {
+const entrenadoresMenu =  async (req, res) => {
+    const entrenadores =  await Atleta.findAll().catch((err) => console.log(err));
+    console.log(entrenadores);
     res.render("entrenadores", {
-        pagina: 'Entrenadores'
+        pagina: 'Entrenadores',
+        entrenadores: entrenadores
     });
 }
 const horarioMenu = (req, res) => {
