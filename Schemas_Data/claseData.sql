@@ -1,0 +1,10 @@
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (1,2,2);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (2,4,3);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (3,4,2);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (4,3,1);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (5,3,5);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (6,4,3);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (7,2,2);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (8,3,2);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (9,1,4);
+INSERT INTO clases(id_clase,id_especialidad,id_wod) VALUES (10,1,2);
