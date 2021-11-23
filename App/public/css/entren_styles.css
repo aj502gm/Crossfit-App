@@ -6,9 +6,13 @@ body
     /*background: url(../media/gym.jpg);*/
     background-size: cover;
     background-position: center center;
-    
+    display:flex;
     background-repeat: no-repeat;
     background-attachment: fixed;
     font-family: 'Poppins';
     padding: 50px;
+}
+
+.tabla-entrenadores{
+    top: 50px;
 }

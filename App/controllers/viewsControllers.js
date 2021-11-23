@@ -13,5 +13,9 @@ const horarioMenu = (req, res) => {
         pagina: 'Horarios'
     });
 }
-
-export {mainMenu, entrenadoresMenu, horarioMenu}
+const girlsMenu = (req, res) => {
+    res.render("girls", {
+        pagina: "Girls"
+    });
+}
+export {mainMenu, entrenadoresMenu, horarioMenu, girlsMenu}

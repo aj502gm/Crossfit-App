@@ -1,5 +1,5 @@
 import express from "express";
-import {mainMenu, entrenadoresMenu, horarioMenu} from "../controllers/viewsControllers.js";
+import {mainMenu, entrenadoresMenu, horarioMenu, girlsMenu} from "../controllers/viewsControllers.js";
 //objeto ruteador.
 const router = express.Router();
 
@@ -12,8 +12,8 @@ router.get('/entrenadoresMenu', entrenadoresMenu);
 // //Ruta para horarios
 router.get('/horarioMenu', horarioMenu);
 
-// //ruta para viajes.
-// router.get('/viajes', viajesMenu);
+// //ruta para the girls.
+router.get('/girlsMenu', girlsMenu);
 
 // router.get("viajes/:slug", paginaDetalleViaje); //<-XXX
 

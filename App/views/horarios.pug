@@ -1,12 +1,15 @@
 extends ./layout/index
 
 block contenido
-    #displayTabla
-        table.table.table-striped.table-hover
+    .container
+        nav.navbar.navbar-light.bg-dark
+            .container-fluid
+            a.logo(href='#') Horarios
+        table#displayTabla.table.table-dark.table-hover(class='bg-dark.bg-gradient')
             thead
                 tr
                     th(scope='col') #
-                    th(scope='col') Día
+                    th(scope='col') Día (FORMATO ESPECIFICO)
                     th(scope='col') Hora
                     th(scope='col') Clase
                     th(scope='col') Entrenador

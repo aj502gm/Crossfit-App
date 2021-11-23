@@ -72,12 +72,5 @@ header .navigation li a #return:hover
 }
 
 #displayTabla{
-    position: relative;
-    background-color: white;
-    border-radius: 20px;
-    font-size: 30px;
-    text-align: center;
-    width: 1500px;
-    color: black;
-    left: 7%;
+    top: 50px;
 }
