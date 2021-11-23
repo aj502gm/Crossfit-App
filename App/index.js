@@ -1,6 +1,6 @@
 import express from 'express';
 import router from './routes/routes.js'
-//import db from "./config/bd";
+import db from "./config/db.js"
 /*
 
 CREAR BASE DE DATOS EN MYSQL, VERIFICAR PUERTO, ETC
@@ -11,7 +11,7 @@ const port = process.env.PORT || 5500;
 //asignamos router a routes/routes.js
 app.use('/', router);
 
-//db.authenticate().then(() => console.log('exito')).catch((error) => console.log(error));
+db.authenticate().then(() => console.log('exito')).catch((error) => console.log(error));
 
 //habilitamos el HTML engine
 app.set('view engine', 'pug');
@@ -25,7 +25,7 @@ app.use(express.static('public'));
 app.use((req, res, next) => {
     const currentDate = new Date();
     res.locals.currentYear = currentDate.getFullYear();
-    res.locals.siteName = 'Agencia de Viajes';
+    res.locals.siteName = 'Crossfit App';
     return next();
 });
 
