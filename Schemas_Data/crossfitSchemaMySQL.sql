@@ -118,23 +118,25 @@ CREATE TABLE detalles_Top_Hombres( /*XXXX*/
     id_leaderboard INT,
     id_atleta INT,
     dia INT, /*AGREGAR CONSTRAINT*/
-    mes ENUM ('ENERO', 'FEBRERO' ,'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'), /*CONSTRAINT*/
+    mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
     CONSTRAINT  fk_id_leader_detalles_hombres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard),
     CONSTRAINT fk_id_atleta_detalles_hombres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
+    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia CHECK (dia >= 1 AND dia <= 31)
 );
 CREATE TABLE detalles_Top_Mujeres( /*XXXX*/
-    id_registro_hombres INT PRIMARY KEY AUTO_INCREMENT,
+    id_registro_mujeres INT PRIMARY KEY AUTO_INCREMENT,
     id_leaderboard INT,
     id_atleta INT,
     dia INT, /*AGREGAR CONSTRAINT*/
-    mes ENUM ('ENERO', 'FEBRERO' ,'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'), /*CONSTRAINT*/
+    mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
     CONSTRAINT  fk_id_leader_detalles_mujeres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard),
     CONSTRAINT fk_id_atleta_detalles_mujeres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
+    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia_mujeres CHECK (dia >= 1 AND dia <= 31)
 );
 
@@ -150,11 +152,12 @@ CREATE TABLE girls_hombres( /*XXXX*/
     id_girl INT,
     id_atleta INT,
     dia INT, /*AGREGAR CONSTRAINT*/
-    mes ENUM ('ENERO', 'FEBRERO' ,'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'), /*CONSTRAINT*/
+    mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
     CONSTRAINT  fk_id_girl_hombre FOREIGN KEY (id_girl) REFERENCES the_girls(id_girl),
     CONSTRAINT fk_id_atleta_girl_hombre FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
+    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia_hombres_girls CHECK (dia >= 1 AND dia <= 31)
 );
 CREATE TABLE girls_mujeres(/*XXXX*/
@@ -162,11 +165,12 @@ CREATE TABLE girls_mujeres(/*XXXX*/
     id_girl INT,
     id_atleta INT,
     dia INT, /*AGREGAR CONSTRAINT*/
-    mes ENUM ('ENERO', 'FEBRERO' ,'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'), /*CONSTRAINT*/
+    mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
     CONSTRAINT  fk_id_girl_mujer FOREIGN KEY (id_girl) REFERENCES the_girls(id_girl),
     CONSTRAINT fk_id_atleta_girl_mujer FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
+    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia_mujer_girls CHECK (dia >= 1 AND dia <= 31)
 );
 
