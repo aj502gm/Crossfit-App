@@ -84,14 +84,14 @@ header .navigation li a:hover
     max-width: 600px;
 }
 
-.info .infoBX h2
+.info .infoBox h2
 {
     font-size: 4em;
     color: #fff;
     line-height: 1em;
 }
 
-.info .infoBX p
+.info .infoBox p
 {
     font-size: 1.1em;
     color: #fff;
@@ -99,7 +99,7 @@ header .navigation li a:hover
     margin: 20px 0;
 }
 
-.info .infoBX a
+.info .infoBox a
 {
     display: inline-block;
     padding: 10px 30px;
@@ -111,10 +111,10 @@ header .navigation li a:hover
     border-radius: 10px;
 }
 
-.info .infoBX a:hover
+.info .infoBox a:hover
 {
     background: black;
-    color: #fff;
+    color: #c9e300;
     padding: 15px 35px;
 }
 

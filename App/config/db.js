@@ -1,7 +1,7 @@
 import Sequelize from "sequelize";
 let db = {};
 export default db = new Sequelize(
-    'CrossfitApp',
+    'crossfitapp',
     'root',
     'admin',
     {

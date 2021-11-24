@@ -16,8 +16,6 @@ db.authenticate().then(() => console.log('exito')).catch((error) => console.log(
 //habilitamos el HTML engine
 app.set('view engine', 'pug');
 
-
-
 //middleware para llamar a recursos publicos
 app.use(express.static('public'));
 
@@ -32,4 +30,3 @@ app.use((req, res, next) => {
 app.listen(port, () => {
     console.log(`El servidor está funcionando en el puerto ${port}.`);
 });
-
