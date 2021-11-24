@@ -8,7 +8,7 @@ const Atleta = db.define('atletas', {
     peso: {type: Sequelize.FLOAT},
     categoria: {type: Sequelize.STRING},
     solvencia: {type: Sequelize.TINYINT}
-});
+}); //TABLA DE ATLETAS CON EL ID
 
 
 export default Atleta;
