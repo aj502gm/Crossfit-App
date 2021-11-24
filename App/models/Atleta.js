@@ -10,4 +10,5 @@ const Atleta = db.define('atletas', {
     solvencia: {type: Sequelize.TINYINT}
 });
 
+
 export default Atleta;
