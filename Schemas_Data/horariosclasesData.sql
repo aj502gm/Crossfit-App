@@ -1,0 +1,10 @@
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (1, '15:07:56', '18:33:08', '2020-03-22', 4);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (2, '13:35:37', '18:57:58', '2020-12-21', 1);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (3, '14:18:24', '16:47:33', '2020-04-17', 9);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (4, '14:03:49', '19:24:47', '2020-03-01', 6);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (5, '15:15:08', '19:59:18', '2020-08-27', 7);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (6, '17:23:42', '18:39:15', '2021-01-26', 1);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (7, '17:32:47', '18:27:28', '2021-04-20', 5);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (8, '13:54:45', '13:36:17', '2021-08-16', 3);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (9, '16:43:35', '11:14:34', '2021-10-28', 7);
+insert into horarios_clases (id_horario, hora_inicio, hora_final, dia, id_clase) values (10, '11:26:04', '13:17:19', '2021-01-21', 5);

@@ -4,32 +4,24 @@ block contenido
     .container
         nav.navbar.navbar-light.bg-dark
             .container-fluid
-            a.logo(href='#') Horarios
+            a.logo(href='#') #{pagina}
+        
         table#displayTabla.table.table-dark.table-hover(class='bg-dark.bg-gradient')
             thead
                 tr
                     th(scope='col') #
-                    th(scope='col') Día (FORMATO ESPECIFICO)
-                    th(scope='col') Hora
+                    th(scope='col') Día
+                    th(scope='col') Hora Inicio
+                    th(scope='col') Hora Final
                     th(scope='col') Clase
-                    th(scope='col') Entrenador
             tbody
-                tr
-                    th(scope='row') 1
-                    td Lunes
-                    td 9:00 am
-                    td 4
-                    td Romeo
-                tr
-                    th(scope='row') 2
-                    td Martes
-                    td 7:00 pm
-                    td 6
-                    td Vicente
-                tr
-                    th(scope='row') 3
-                    td Jueves
-                    td 4:00 pm
-                    td 3
-                    td Larry
+                each horario in horarios
+                    each clase in clases
+                        if horario.id_horario === clase.id_clase
+                            tr
+                                th(scope='row') 1
+                                td #{horario.dia}
+                                td #{horario.hora_inicio}
+                                td #{horario.hora_final}
+                                td #{clase.id_clase}
     #botones
