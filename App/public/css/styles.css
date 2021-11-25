@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap'); 
 
 
-
 body
 {
     position: relative;
@@ -89,6 +88,11 @@ header .navigation li a:hover
     font-size: 4em;
     color: #fff;
     line-height: 1em;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Poppins';
+
 }
 
 .info .infoBox p
@@ -97,6 +101,11 @@ header .navigation li a:hover
     color: #fff;
     font-weight: 300;
     margin: 20px 0;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Poppins';
+
 }
 
 .info .infoBox input
@@ -109,6 +118,11 @@ header .navigation li a:hover
     font-weight: 500;
     letter-spacing: 1px;
     border-radius: 10px;
+
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-family: 'Poppins';
 }
 
 .info .infoBox input:hover
