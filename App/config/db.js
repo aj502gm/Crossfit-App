@@ -3,7 +3,7 @@ let db = {};
 export default db = new Sequelize(
     'CrossfitApp',
     'root',
-    'admin',
+    'Kuni20-Galilei',
     {
         host: '127.0.0.1',
         port: '3306',
