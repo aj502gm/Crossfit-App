@@ -5,6 +5,7 @@ import { Clase } from '../models/Clase.js';
 
 import Atleta from "../models/Atleta.js";
 import Atleta_Entrenador from "../models/Atleta_Entrenadors.js";
+import Girl from "../models/Girls.js"
 
 
 const mainMenu = (req, res) => {
@@ -42,9 +43,12 @@ const horarioMenu = async (req, res) => {
     });
 }
 
-const girlsMenu = (req, res) => {
+const girlsMenu = async (req, res) => {
+    const theGirls = await Girl.findAll().catch((err) => console.log(err));
+    console.log(theGirls);
     res.render("girls", {
-        pagina: "Girls"
+        pagina: "Girls",
+        girls: theGirls
     });
 }
 export {mainMenu, entrenadoresMenu, horarioMenu, girlsMenu}
