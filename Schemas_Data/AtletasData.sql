@@ -28,3 +28,5 @@ INSERT INTO atletas(id_atleta,nombres,apellidos,peso,categoria,solvencia) VALUES
 INSERT INTO atletas(id_atleta,nombres,apellidos,peso,categoria,solvencia) VALUES (28,'Hersch','Antoons',267.35,'recipes',0);
 INSERT INTO atletas(id_atleta,nombres,apellidos,peso,categoria,solvencia) VALUES (29,'Loree','Whittam',240.89,'wad',1);
 INSERT INTO atletas(id_atleta,nombres,apellidos,peso,categoria,solvencia) VALUES (30,'Enrico','Mozzetti',132.73,'trauma',1);
+
+SELECT * FROM atletas;

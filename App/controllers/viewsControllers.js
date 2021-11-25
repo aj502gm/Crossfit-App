@@ -1,5 +1,11 @@
+
 import { Horario } from '../models/Horario.js';
 import { Clase } from '../models/Clase.js';
+
+
+import Atleta from "../models/Atleta.js";
+import Atleta_Entrenador from "../models/Atleta_Entrenadors.js";
+
 
 const mainMenu = (req, res) => {
     res.render("inicio", {
@@ -8,8 +14,15 @@ const mainMenu = (req, res) => {
 }
 
 const entrenadoresMenu = (req, res) => {
+
+const entrenadoresMenu =  async (req, res) => {
+    const entrenadores =  await Atleta.findAll().catch((err) => console.log(err));
+    const atleta_entrenador = await Atleta_Entrenador.findAll().catch((err) => console.log(err));
+    console.log(atleta_entrenador);
     res.render("entrenadores", {
-        pagina: 'Entrenadores'
+        pagina: 'Entrenadores',
+        entrenadores: entrenadores,
+        atleta_entrenador: atleta_entrenador
     });
 }
 
