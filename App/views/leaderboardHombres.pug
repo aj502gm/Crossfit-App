@@ -1,0 +1,22 @@
+extends ./layout/index
+
+block contenido
+    .container
+            nav.navbar.navbar-light.bg-dark
+                .container-fluid
+                a.logo(href='#') Leaderboard Hombres
+            table#tabla-entrenadores.table.table-dark.table-hover(class='bg-dark.bg-gradient tabla-entrenadores')
+                thead
+                tr
+                    th(scope='col') Puesto Top
+                    th(scope='col') ID Atleta
+                    th(scope='col') Fecha
+                    th(scope='col')
+                each detalles_Top_Hombres in topHombres
+                    tr
+                        td #{detalles_Top_Hombres.puesto_top}
+                        td #{detalles_Top_Hombres.id_atleta}
+                        td  #{detalles_Top_Hombres.dia}/#{detalles_Top_Hombres.mes}
+                        td
+                            input.btn.btn-danger(type='button' value='Eliminar' id = detalles_Top_Hombres.id_atleta )     
+                                

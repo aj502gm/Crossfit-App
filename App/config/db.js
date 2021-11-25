@@ -3,7 +3,7 @@ let db = {};
 export default db = new Sequelize(
     'crossfitapp',
     'root',
-    'Kuni20-Galilei',
+    'admin',
     {
         host: '127.0.0.1',
         port: '3306',
@@ -20,4 +20,3 @@ export default db = new Sequelize(
         operatorAliases: false
     }
 );
-
