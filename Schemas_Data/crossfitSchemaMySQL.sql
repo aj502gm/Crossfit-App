@@ -31,7 +31,7 @@ CREATE TABLE clases( /*XXXX*/
     id_especialidad INT,
     id_wod INT,
 
-    CONSTRAINT fk_especialidad FOREIGN KEY (id_especialidad) REFERENCES especialidad(id_especialidad),
+    CONSTRAINT fk_especialidad FOREIGN KEY (id_especialidad) REFERENCES especialidad(id_especialidad) ON DELETE CASCADE,
     CONSTRAINT fk_wod FOREIGN KEY (id_Wod) REFERENCES wod(id_wod)
 
 );
@@ -47,8 +47,8 @@ CREATE TABLE movimientos_wods( /*XXX*/
     descripcion TEXT,
 
     PRIMARY KEY (id_wod, id_movimiento),
-    CONSTRAINT fk_id_wod FOREIGN KEY (id_wod) REFERENCES wod(id_wod),
-    CONSTRAINT fk_id_movimiento FOREIGN KEY (id_movimiento) REFERENCES movimientos(id_movimiento)
+    CONSTRAINT fk_id_wod FOREIGN KEY (id_wod) REFERENCES wod(id_wod) ON DELETE CASCADE,
+    CONSTRAINT fk_id_movimiento FOREIGN KEY (id_movimiento) REFERENCES movimientos(id_movimiento) ON DELETE CASCADE
 );
 CREATE TABLE horarios_clase( /*XXXX*/
     id_horario INT PRIMARY KEY AUTO_INCREMENT,
@@ -57,7 +57,7 @@ CREATE TABLE horarios_clase( /*XXXX*/
     dia DATE,
     id_clase INT,
 
-    CONSTRAINT fk_CLASE FOREIGN KEY (id_clase) REFERENCES clases(id_clase)
+    CONSTRAINT fk_CLASE FOREIGN KEY (id_clase) REFERENCES clases(id_clase) ON DELETE CASCADE
 
 );
 CREATE TABLE asistencia_clases( /*XXXXX*/
@@ -66,8 +66,8 @@ CREATE TABLE asistencia_clases( /*XXXXX*/
     comentario TEXT,
 
     PRIMARY KEY (id_clase, id_atleta),
-    CONSTRAINT fk_id_clase FOREIGN KEY (id_clase) REFERENCES clases(id_clase),
-    CONSTRAINT fk_id_atleta FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta)
+    CONSTRAINT fk_id_clase FOREIGN KEY (id_clase) REFERENCES clases(id_clase) ON DELETE CASCADE,
+    CONSTRAINT fk_id_atleta FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE
 );
 
 CREATE TABLE entrenador( /*XXXX*/
@@ -78,15 +78,15 @@ CREATE TABLE atletas_entrenadores(/*XXXX*/
     id_atleta INT,
     id_entrenador INT,
     PRIMARY KEY(id_atleta, id_entrenador),
-    CONSTRAINT fk_id_atleta_manyToMany FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
-    CONSTRAINT fk_id_entrenador_manyToMany FOREIGN KEY (id_entrenador) REFERENCES entrenador(id_entrenador)
+    CONSTRAINT fk_id_atleta_manyToMany FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE,
+    CONSTRAINT fk_id_entrenador_manyToMany FOREIGN KEY (id_entrenador) REFERENCES entrenador(id_entrenador) ON DELETE CASCADE
 );
 CREATE TABLE entrenador_clases(/*XXXX*/
     id_entrenador INT,
     id_clase INT,
     PRIMARY KEY(id_entrenador, id_clase),
-    CONSTRAINT fk_id_entrenador_clase_manyToMany FOREIGN KEY (id_entrenador) REFERENCES entrenador(id_entrenador),
-    CONSTRAINT fk_id_clase_clase_manyToMany FOREIGN KEY (id_clase) REFERENCES clases(id_clase)
+    CONSTRAINT fk_id_entrenador_clase_manyToMany FOREIGN KEY (id_entrenador) REFERENCES entrenador(id_entrenador) ON DELETE CASCADE,
+    CONSTRAINT fk_id_clase_clase_manyToMany FOREIGN KEY (id_clase) REFERENCES clases(id_clase) ON DELETE CASCADE
 );
 
 CREATE TABLE especialidad_atletas( /*XXXX*/
@@ -97,9 +97,9 @@ CREATE TABLE especialidad_atletas( /*XXXX*/
     clase_logro INT,
     fecha_logro DATE,
     PRIMARY KEY (id_atleta, id_especialidad),
-    CONSTRAINT fk_id_atleta_especialidad FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
-    CONSTRAINT fk_id_especialidad_especialidad FOREIGN KEY  (id_especialidad) REFERENCES  especialidad(id_especialidad),
-    CONSTRAINT fk_id_claseLogro_idclase FOREIGN KEY (clase_logro) REFERENCES clases(id_clase)
+    CONSTRAINT fk_id_atleta_especialidad FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE,
+    CONSTRAINT fk_id_especialidad_especialidad FOREIGN KEY  (id_especialidad) REFERENCES  especialidad(id_especialidad) ON DELETE CASCADE,
+    CONSTRAINT fk_id_claseLogro_idclase FOREIGN KEY (clase_logro) REFERENCES clases(id_clase) ON DELETE CASCADE
 );
 
 CREATE TABLE leaderboard( /*XXXX*/
@@ -107,9 +107,9 @@ CREATE TABLE leaderboard( /*XXXX*/
     id_especialidad INT,
     id_wod INT,
     id_rx INT,
-        CONSTRAINT fk_id_especialidad_leaderboard FOREIGN KEY (id_especialidad) REFERENCES especialidad(id_especialidad),
-        CONSTRAINT fk_id_wod_leaderboard FOREIGN KEY (id_wod) REFERENCES wod(id_wod),
-        CONSTRAINT fk_id_rx_leaderboard FOREIGN KEY (id_rx) REFERENCES  rx(id_rx)
+        CONSTRAINT fk_id_especialidad_leaderboard FOREIGN KEY (id_especialidad) REFERENCES especialidad(id_especialidad) ON DELETE CASCADE,
+        CONSTRAINT fk_id_wod_leaderboard FOREIGN KEY (id_wod) REFERENCES wod(id_wod) ON DELETE CASCADE,
+        CONSTRAINT fk_id_rx_leaderboard FOREIGN KEY (id_rx) REFERENCES  rx(id_rx) ON DELETE CASCADE
 
 );
 
@@ -121,8 +121,8 @@ CREATE TABLE detalles_Top_Hombres( /*XXXX*/
     mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
-    CONSTRAINT  fk_id_leader_detalles_hombres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard),
-    CONSTRAINT fk_id_atleta_detalles_hombres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
+    CONSTRAINT  fk_id_leader_detalles_hombres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard) ON DELETE CASCADE,
+    CONSTRAINT fk_id_atleta_detalles_hombres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE,
     CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia CHECK (dia >= 1 AND dia <= 31)
 );
@@ -134,9 +134,9 @@ CREATE TABLE detalles_Top_Mujeres( /*XXXX*/
     mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
-    CONSTRAINT  fk_id_leader_detalles_mujeres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard),
-    CONSTRAINT fk_id_atleta_detalles_mujeres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
-    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
+    CONSTRAINT  fk_id_leader_detalles_mujeres FOREIGN KEY (id_leaderboard) REFERENCES leaderboard(id_leaderboard) ON DELETE CASCADE,
+    CONSTRAINT fk_id_atleta_detalles_mujeres FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE,
+    CONSTRAINT check_mes2 CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia_mujeres CHECK (dia >= 1 AND dia <= 31)
 );
 
@@ -155,9 +155,9 @@ CREATE TABLE girls_hombres( /*XXXX*/
     mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
-    CONSTRAINT  fk_id_girl_hombre FOREIGN KEY (id_girl) REFERENCES the_girls(id_girl),
-    CONSTRAINT fk_id_atleta_girl_hombre FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
-    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
+    CONSTRAINT  fk_id_girl_hombre FOREIGN KEY (id_girl) REFERENCES the_girls(id_girl) ON DELETE CASCADE,
+    CONSTRAINT fk_id_atleta_girl_hombre FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE,
+    CONSTRAINT check_mes3 CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia_hombres_girls CHECK (dia >= 1 AND dia <= 31)
 );
 CREATE TABLE girls_mujeres(/*XXXX*/
@@ -168,9 +168,9 @@ CREATE TABLE girls_mujeres(/*XXXX*/
     mes INT, /*CONSTRAINT*/
     puesto_top INT,
 
-    CONSTRAINT  fk_id_girl_mujer FOREIGN KEY (id_girl) REFERENCES the_girls(id_girl),
-    CONSTRAINT fk_id_atleta_girl_mujer FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta),
-    CONSTRAINT check_mes CHECK (mes >= 1 AND mes <= 12),
+    CONSTRAINT  fk_id_girl_mujer FOREIGN KEY (id_girl) REFERENCES the_girls(id_girl) ON DELETE CASCADE,
+    CONSTRAINT fk_id_atleta_girl_mujer FOREIGN KEY (id_atleta) REFERENCES atletas(id_atleta) ON DELETE CASCADE,
+    CONSTRAINT check_mes4 CHECK (mes >= 1 AND mes <= 12),
     CONSTRAINT check_dia_mujer_girls CHECK (dia >= 1 AND dia <= 31)
 );
 
