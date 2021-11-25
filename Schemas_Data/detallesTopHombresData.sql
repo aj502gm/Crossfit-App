@@ -18,3 +18,5 @@ insert into detalles_Top_Hombres (id_registro_hombres, id_leaderboard, id_atleta
 insert into detalles_Top_Hombres (id_registro_hombres, id_leaderboard, id_atleta, dia, mes, puesto_top) values (18, 5, 28, 24, 2, 27);
 insert into detalles_Top_Hombres (id_registro_hombres, id_leaderboard, id_atleta, dia, mes, puesto_top) values (19, 3, 20, 1, 11, 14);
 insert into detalles_Top_Hombres (id_registro_hombres, id_leaderboard, id_atleta, dia, mes, puesto_top) values (20, 1, 16, 29, 9, 78);
+
+SELECT * FROM detalles_Top_Hombres;
