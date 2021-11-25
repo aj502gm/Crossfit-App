@@ -14,7 +14,6 @@ const mainMenu = (req, res) => {
     });
 }
 
-const entrenadoresMenu = (req, res) => {
 
 const entrenadoresMenu =  async (req, res) => {
     const entrenadores =  await Atleta.findAll().catch((err) => console.log(err));
